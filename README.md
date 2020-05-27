@@ -8,6 +8,16 @@ $ vendor/bin/phpunit tests/SlugTest.php --color
 
 Lesson 4 - Laravel folder structure
 
+Lesson 5 - Tests structure as in Laravel.
+$ composer dump-autoload
+$ vendor/bin/phpunit --color
+
+
+
+
+
+
+
 
 
 
