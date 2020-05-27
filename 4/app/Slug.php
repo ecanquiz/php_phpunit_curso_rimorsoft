@@ -1,4 +1,5 @@
 <?php
+namespace App;
 
 class Slug
 {
@@ -10,9 +11,14 @@ class Slug
         $this->original = $original;
     }
 
+    public function getOriginal()
+    {
+        return trim($this->original);
+    }
+
     public function render()
     {
-        $slug = str_replace(" ", "-", $this->original);
+        $slug = str_replace(" ", "-", $this->getOriginal());
 
         return strtolower($slug);
     }
