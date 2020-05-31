@@ -5,6 +5,7 @@ class User
 {
     protected $name = "";
     protected $lastname = "";
+    protected $email = "";
 
     public function setName($name)
     {
@@ -14,6 +15,11 @@ class User
     public function setLastName($lastname)
     {
         $this->lastname = $lastname;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     public function getName()
@@ -26,7 +32,14 @@ class User
         return $this->lastname;
     }
 
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
-    
+    public function getFullName()
+    {
+        return trim("$this->name $this->lastname");
+    }
 
 }
