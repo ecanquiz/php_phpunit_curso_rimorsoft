@@ -36,7 +36,7 @@ class UserTest extends TestCase
         $this->assertEquals($this->user->getEmail(), "fdsoil123@gmail");
     }
 
-    public function test_i_get_fullname()
+    public function test_get_fullname()
     {
         $this->user->setName("Ernesto");
         $this->user->setLastName("Canquiz");
@@ -44,9 +44,20 @@ class UserTest extends TestCase
         $this->assertEquals($this->user->getFullName(), "Ernesto Canquiz");
     }
 
-    public function test_i_get_fullname_empty()
+    public function test_get_fullname_empty()
     {
         $this->assertEmpty($this->user->getFullName());
+    }
+
+    public function test_name_lastname_email_without_spaces()
+    {
+        $this->user->setName("    Ernesto");
+        $this->user->setLastName("   Canquiz    ");
+        $this->user->setEmail("     fdsoil123@gmail    ");
+
+        $this->assertEquals($this->user->getName(), "Ernesto");
+        $this->assertEquals($this->user->getLastName(), "Canquiz");
+        $this->assertEquals($this->user->getEmail(), "fdsoil123@gmail");
     }
 
 }
